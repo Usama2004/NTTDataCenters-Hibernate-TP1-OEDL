@@ -1,6 +1,21 @@
 package com.nttdata.nttdatacenters_hibernate_t1_OEDL;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+/*
+Esta clase Cliente representa una tabla cliente en una base de datos, mapeada con anotaciones JPA para 
+su uso con Hibernate. Cada cliente tiene un identificador único (id), nombre, primer apellido, segundo apellido 
+y número de documento (único y no nulo). Los constructores y métodos getter/setter permiten la creación y 
+manipulación de instancias de Cliente.
+
+Uso: Se utiliza en aplicaciones que requieren operaciones CRUD (Crear, Leer, Actualizar, Eliminar) sobre clientes 
+en una base de datos, facilitando la persistencia y recuperación de datos mediante Hibernate.   
+*/
 
 @Entity
 @Table(name = "Cliente")
@@ -22,7 +37,7 @@ public class Cliente {
     private String numeroDocumento;
 
     // Contructor
-    
+
     public Cliente(int id, String nombre, String primerApellido, String segundoApellido, String numeroDocumento) {
 		super();
 		this.id = id;
@@ -31,13 +46,13 @@ public class Cliente {
 		this.segundoApellido = segundoApellido;
 		this.numeroDocumento = numeroDocumento;
 	}
-        
+
     public Cliente() {
 		super();
 	}
 
 	// Getters y Setters
-        
+
 	public int getId() {
 		return id;
 	}
