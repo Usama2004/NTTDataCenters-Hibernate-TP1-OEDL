@@ -11,5 +11,6 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <!-- Mapeo de la entidad -->
         <mapping class="com.nttdata.nttdatacenters_hibernate_t1_OEDL.Cliente"/>
+        <mapping class="com.nttdata.nttdatacenters_hibernate_t1_OEDL.Contrato"/>
     </session-factory>
 </hibernate-configuration>

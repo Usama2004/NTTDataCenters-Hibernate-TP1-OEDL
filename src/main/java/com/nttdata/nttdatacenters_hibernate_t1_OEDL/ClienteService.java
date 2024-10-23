@@ -5,8 +5,8 @@ import java.util.List;
 public class ClienteService {
     private ClienteDAO clienteDAO;
 
-    public ClienteService() {
-        clienteDAO = new ClienteDAOImpl();
+    public ClienteService(ClienteDAO clienteDAO) {
+    	this.clienteDAO = clienteDAO; // Asignar el parámetro al campo de instancia
     }
 
     public void insertarCliente(Cliente cliente) {

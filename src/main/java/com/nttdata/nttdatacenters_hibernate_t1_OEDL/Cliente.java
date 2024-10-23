@@ -1,10 +1,14 @@
 package com.nttdata.nttdatacenters_hibernate_t1_OEDL;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /*
@@ -20,25 +24,21 @@ en una base de datos, facilitando la persistencia y recuperación de datos media
 @Entity
 @Table(name = "Cliente")
 public class Cliente {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	private String nombre;
+	private String primerApellido;
+	private String segundoApellido;
+	@Column(unique = true, nullable = false, length = 9)
+	private String numeroDocumento;
 
-    @Column(name = "nombre", nullable = false)
-    private String nombre;
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<Contrato> contratos;
 
-    @Column(name = "primer_apellido", nullable = false)
-    private String primerApellido;
+	// Contructor
 
-    @Column(name = "segundo_apellido", nullable = false)
-    private String segundoApellido;
-
-    @Column(name = "numero_documento", unique = true, nullable = false, length = 9)
-    private String numeroDocumento;
-
-    // Contructor
-
-    public Cliente(String nombre, String primerApellido, String segundoApellido, String numeroDocumento) {
+	public Cliente(String nombre, String primerApellido, String segundoApellido, String numeroDocumento) {
 		super();
 		this.nombre = nombre;
 		this.primerApellido = primerApellido;
@@ -46,7 +46,7 @@ public class Cliente {
 		this.numeroDocumento = numeroDocumento;
 	}
 
-    public Cliente() {
+	public Cliente() {
 		super();
 	}
 
@@ -92,4 +92,3 @@ public class Cliente {
 		this.numeroDocumento = numeroDocumento;
 	}
 }
-
