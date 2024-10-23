@@ -38,9 +38,8 @@ public class Cliente {
 
     // Contructor
 
-    public Cliente(int id, String nombre, String primerApellido, String segundoApellido, String numeroDocumento) {
+    public Cliente(String nombre, String primerApellido, String segundoApellido, String numeroDocumento) {
 		super();
-		this.id = id;
 		this.nombre = nombre;
 		this.primerApellido = primerApellido;
 		this.segundoApellido = segundoApellido;
