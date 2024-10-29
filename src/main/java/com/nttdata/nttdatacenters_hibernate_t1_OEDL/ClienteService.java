@@ -32,5 +32,9 @@ public class ClienteService {
     public List<Cliente> buscarClientesPorNombreYApellidos(String nombre, String primerApellido, String segundoApellido) {
         return clienteDAO.buscarPorNombreYApellidos(nombre, primerApellido, segundoApellido);
     }
+    
+    public List<Cliente> getClientesByCriteria(String nombre, String primerApellido, String segundoApellido) {
+        return clienteDAO.buscarPorNombreYApellidosCriteria(nombre, primerApellido, segundoApellido);
+    }
 }
 

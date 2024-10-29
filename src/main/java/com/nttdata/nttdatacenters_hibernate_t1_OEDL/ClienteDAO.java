@@ -16,5 +16,6 @@ public interface ClienteDAO {
     void eliminar(int id);
     void actualizar(Cliente cliente);
     List<Cliente> buscarPorNombreYApellidos(String nombre, String primerApellido, String segundoApellido);
+    //Nuevo método usando JPA Criteria
+    List<Cliente> buscarPorNombreYApellidosCriteria(String nombre, String primerApellido, String segundoApellido);
 }
-

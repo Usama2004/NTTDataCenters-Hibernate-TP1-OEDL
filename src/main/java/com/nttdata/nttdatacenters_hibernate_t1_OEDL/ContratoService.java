@@ -32,5 +32,9 @@ public class ContratoService {
     public List<Contrato> buscarContratosPorClienteId(int clienteId) {
         return contratoDAO.buscarPorClienteId(clienteId);
     }
+    
+    public List<Contrato> getContratosByClienteIdCriteria(int clienteId) {
+        return contratoDAO.buscarPorClienteIdCriteria(clienteId);
+    }
 }
 

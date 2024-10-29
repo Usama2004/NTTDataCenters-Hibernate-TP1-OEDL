@@ -9,4 +9,6 @@ public interface ContratoDAO {
     void eliminar(int id);
     void actualizar(Contrato contrato);
     List<Contrato> buscarPorClienteId(int clienteId);
+    //Nuevo método usando JPA Criteria
+    List<Contrato> buscarPorClienteIdCriteria(int clienteId);
 }
